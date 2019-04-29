@@ -1,6 +1,6 @@
 package com.keystone.demo.service;
 
-import com.keystone.demo.entities.Auditeur;
+import com.keystone.demo.Entity.Auditeur;
 
 import java.util.List;
 
