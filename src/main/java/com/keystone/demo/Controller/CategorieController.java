@@ -47,7 +47,6 @@ public class CategorieController {
     @RequestMapping(method = RequestMethod.POST,value="/categorie")
     @CrossOrigin(origins = crossOriginUrl)
     public void addCategorie(@RequestBody Categorie categorie) {
-
         try {
             categorieService.addCategorie(categorie);
         } catch (AddCategorieException e) {

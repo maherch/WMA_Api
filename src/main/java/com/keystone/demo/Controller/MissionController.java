@@ -27,7 +27,6 @@ public class MissionController {
             System.out.println(e.getMessage());
         }
         return lp;
-
     }
 
     @RequestMapping("/mission/{id}")
@@ -41,7 +40,6 @@ public class MissionController {
             System.out.println(e.getMessage());
         }
         return p;
-
     }
 
     @RequestMapping(method = RequestMethod.POST,value="/mission")
@@ -65,7 +63,7 @@ public class MissionController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE,value="/mission/{id}")
-    //@CrossOrigin(origins = crossOriginUrl)
+    @CrossOrigin(origins = crossOriginUrl)
     public void deleteMission(@PathVariable int id) {
         try {
             missionService.deleteMission(id);

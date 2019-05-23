@@ -7,7 +7,7 @@ import com.keystone.demo.Entity.Categorie;
 
 
 @Repository
-@CrossOrigin(origins = "http://localhost:4202")
+@CrossOrigin(origins = "http://localhost:4200")
 public interface CategorieRepository extends CrudRepository<Categorie,Integer>{
 
 }

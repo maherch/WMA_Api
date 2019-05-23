@@ -1,9 +1,6 @@
 package com.keystone.demo.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Mission {
@@ -16,6 +13,9 @@ public class Mission {
     private String dateFin;
     private String nomMission;
     private String sujetMission;
+    @ManyToOne
+    @JoinColumn
+    private Auditeur auditeur;
 
 
     public Mission(){}

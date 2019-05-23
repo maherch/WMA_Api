@@ -1,8 +1,7 @@
 package com.keystone.demo.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Auditeur {
@@ -23,6 +22,28 @@ public class Auditeur {
     private String motPass;
     private String ProfilePic;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private User user;
+
+    @OneToMany(mappedBy = "auditeur",cascade = CascadeType.ALL)
+    private List<Mission>list;
+
+    public Auditeur(String nom, String prenom, String datenais, String cin, String sexe, String type, String email, String telephone, String pays, String nomUtili, String motPass, String profilePic, List<Mission> list) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.datenais = datenais;
+        this.cin = cin;
+        this.sexe = sexe;
+        this.type = type;
+        this.email = email;
+        this.telephone = telephone;
+        this.pays = pays;
+        NomUtili = nomUtili;
+        this.motPass = motPass;
+        ProfilePic = profilePic;
+        this.list = list;
+    }
 
     public Auditeur(String nom, String prenom, String datenais, String cin, String sexe, String type, String email, String telephone, String pays, String nomUtili, String motPass) {
         this.nom = nom;
@@ -159,5 +180,14 @@ public class Auditeur {
 
     public void setPays(String pays) {
         this.pays = pays;
+    }
+
+
+    public List<Mission> getList() {
+        return list;
+    }
+
+    public void setList(List<Mission> list) {
+        this.list = list;
     }
 }
