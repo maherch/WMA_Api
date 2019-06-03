@@ -29,6 +29,7 @@ public class MissionController {
         return lp;
     }
 
+
     @RequestMapping("/mission/{id}")
     @CrossOrigin(origins = crossOriginUrl)
     public Mission getMissionId(@PathVariable int id) {
@@ -72,7 +73,7 @@ public class MissionController {
         }
     }
     @RequestMapping(method = RequestMethod.DELETE, value = "/deleteAllMission")
-    //CrossOrigin(origins = crossOriginUrl)
+    @CrossOrigin(origins = crossOriginUrl)
     public void deleteAllMission() {
         try {
             missionService.deleteAllMission();

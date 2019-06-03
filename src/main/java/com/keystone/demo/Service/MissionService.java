@@ -35,10 +35,7 @@ public class MissionService {
     }
 
     public void addMission(Mission mission) throws AddMissionException {
-
         missionRepository.save(mission);
-
-
     }
 
     public void editMission(Mission mission, int id) throws EditMissionException {
