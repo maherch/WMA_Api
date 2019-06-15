@@ -1,25 +1,25 @@
 package com.keystone.demo.Entity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class NonConformite {
+public class Suggestion {
+
 
     @Id
     @GeneratedValue
     private Long id;
-    private long idControle;
+    private Long idNc;
     private String description;
 
-
-    public NonConformite() {
+    public Suggestion() {
     }
 
-
-    public NonConformite(long idControle, String description) {
-        this.idControle = idControle;
+    public Suggestion(Long idNc, String description) {
+        this.idNc = idNc;
         this.description = description;
     }
 
@@ -31,18 +31,13 @@ public class NonConformite {
         this.id = id;
     }
 
-    public long getIdControle() {
-        return idControle;
+    public Long getIdNc() {
+        return idNc;
     }
 
-    public void setIdControle(long idControle) {
-        this.idControle = idControle;
+    public void setIdNc(Long idNc) {
+        this.idNc = idNc;
     }
-
-    public NonConformite(String description) {
-        this.description = description;
-    }
-
 
     public String getDescription() {
         return description;

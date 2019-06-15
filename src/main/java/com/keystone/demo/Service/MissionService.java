@@ -1,4 +1,4 @@
-package com.keystone.demo.Service;
+package com.keystone.demo.service;
 
 import com.keystone.demo.Entity.Mission;
 import com.keystone.demo.Repository.MissionRepository;
@@ -28,6 +28,7 @@ public class MissionService {
     }
 
     public Mission getMission(int id) throws GetMissionByIdException {
+
         if(!isExiste(id))
             throw new GetMissionByIdException("Erreur : ID incorrect !");
         else
@@ -35,7 +36,10 @@ public class MissionService {
     }
 
     public void addMission(Mission mission) throws AddMissionException {
+
         missionRepository.save(mission);
+
+
     }
 
     public void editMission(Mission mission, int id) throws EditMissionException {

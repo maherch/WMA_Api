@@ -2,13 +2,12 @@ package com.keystone.demo.Controller;
 
 
 import com.keystone.demo.Entity.NonConformite;
+import com.keystone.demo.exceptionMission.AddMissionException;
+import com.keystone.demo.exceptionNc.AddNcException;
 import com.keystone.demo.exceptionNc.GetListNcException;
 import com.keystone.demo.service.NonConformiteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,11 +31,27 @@ public class NonConformiteController {
         return lp;
     }
 
-    @RequestMapping(value = "/nc",method = RequestMethod.PUT)
-    @CrossOrigin(origins = crossOriginUrl)
-    public void editNc(){
 
+    @RequestMapping(method = RequestMethod.POST,value="/nc")
+    @CrossOrigin(origins = crossOriginUrl)
+    public void addNc(@RequestBody NonConformite nonConformite) {
+        try {
+            nonConformiteService.addNc(nonConformite);
+        } catch (AddNcException e) {
+            System.out.println(e.getMessage());
+        }
     }
+
+
+    @RequestMapping("/controle/nc/{id}")
+    @CrossOrigin(origins = crossOriginUrl)
+    public List<NonConformite> getControleNc(@PathVariable Long id) {
+        List<NonConformite> lt=null;
+        lt=nonConformiteService.getNcByControleId(id);
+        return lt;
+    }
+
+
 
 
 

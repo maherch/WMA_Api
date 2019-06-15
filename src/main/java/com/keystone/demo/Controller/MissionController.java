@@ -2,7 +2,7 @@ package com.keystone.demo.Controller;
 
 
 import com.keystone.demo.Entity.Mission;
-import com.keystone.demo.Service.MissionService;
+import com.keystone.demo.service.MissionService;
 import com.keystone.demo.exceptionMission.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,6 @@ public class MissionController {
         }
         return lp;
     }
-
 
     @RequestMapping("/mission/{id}")
     @CrossOrigin(origins = crossOriginUrl)
@@ -73,7 +72,7 @@ public class MissionController {
         }
     }
     @RequestMapping(method = RequestMethod.DELETE, value = "/deleteAllMission")
-    @CrossOrigin(origins = crossOriginUrl)
+    //CrossOrigin(origins = crossOriginUrl)
     public void deleteAllMission() {
         try {
             missionService.deleteAllMission();

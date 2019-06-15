@@ -1,7 +1,7 @@
 package com.keystone.demo.Controller;
 
 import com.keystone.demo.Entity.Categorie;
-import com.keystone.demo.Service.CategorieService;
+import com.keystone.demo.service.CategorieService;
 
 import com.keystone.demo.exceptionCategorie.*;
 import org.springframework.beans.factory.annotation.Autowired;

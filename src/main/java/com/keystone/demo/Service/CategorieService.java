@@ -1,4 +1,4 @@
-package com.keystone.demo.Service;
+package com.keystone.demo.service;
 
 import com.keystone.demo.Entity.Categorie;
 import com.keystone.demo.Repository.CategorieRepository;
